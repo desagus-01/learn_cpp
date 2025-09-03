@@ -8,17 +8,25 @@ class Student {
   float m_avg = 0;
 
 public:
+  Student() {}
+
+  Student(std::string first, std::string last, int id, float avg)
+      : m_first(first), m_last(last), m_id(id), m_avg(avg) {};
+
+  int getAvg() { return m_avg; }
+
+  int getId() { return m_id; }
+
+  std::string getFirst() { return m_first; }
+
+  std::string getLast() { return m_last; }
 };
 
 int main(int argc, char *argv[]) {
-  std::vector<float> vec;
-  vec.push_back(42.3);
-  vec.push_back(10.1);
-  vec.push_back(19.5);
 
-  for (auto &a : vec) {
-    std::cout << a << "\n";
-  }
+  Student s2("Gus", "Sa", 1, 1.4354);
+
+  std::cout << s2.getFirst() << "\n";
 
   return 0;
 }
