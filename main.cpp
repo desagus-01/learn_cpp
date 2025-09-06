@@ -1,7 +1,14 @@
-void tennify(int *a) { *a = 10; }
+#include <iostream>
 
-int main() {
-  int i = 12;
-  tennify(&i);
-  std::cout << i << "\n";
+void pp(int &i) { std::cout << &i << " " << i << " " << sizeof(i) << "\n"; }
+
+int main(int argc, char *argv[]) {
+
+  int arr[10];
+
+  for (size_t i = 0; i < 10; i++) {
+    pp(arr[i]);
+  }
+
+  return 0;
 }
