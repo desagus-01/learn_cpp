@@ -1,14 +1,14 @@
+#include <cstddef>
 #include <iostream>
 
 void pp(int &i) { std::cout << &i << " " << i << " " << sizeof(i) << "\n"; }
 
-int main(int argc, char *argv[]) {
+class IntArray {
+  size_t m_size;
+  int *m_arr;
 
-  int arr[10];
+public:
+  IntArray(size_t size) : m_size(size), m_arr(new int[size]) {}
+};
 
-  for (size_t i = 0; i < 10; i++) {
-    pp(arr[i]);
-  }
-
-  return 0;
-}
+int main() { return 0; }
